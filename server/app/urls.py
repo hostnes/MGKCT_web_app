@@ -5,6 +5,6 @@ from .views import LessonsView, LessonsByGroupView, GetTeachersView, TeachersLis
 
 urlpatterns = [
     path('get_groups_data/', LessonsView.as_view()),
-    path('get_data_by_group/<str:pk>', LessonsByGroupView.as_view()),
+    path('get_data_by_group/<str:group>', LessonsByGroupView.as_view()),
     path('get_teachers/', TeachersList.as_view()),
 ]
