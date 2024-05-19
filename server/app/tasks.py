@@ -1,15 +1,11 @@
-from bs4 import BeautifulSoup
 from celery import shared_task
-import datetime
-
-
-
 import asyncio
 import datetime
 import os
+from requests_html import HTMLSession
 
 import requests
-from celery.schedules import crontab
+from django.conf import settings
 
 import time
 from bs4 import BeautifulSoup
@@ -17,7 +13,6 @@ import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from bot.bot_creation import bot
 
 week_days = (
     'понедельник',
@@ -45,7 +40,8 @@ number_week_days = {
 def week_task():
     print('start')
     groups = []
-    with open('bot/data/day.html') as file:
+    file_path = os.path.join(settings.BASE_DIR, 'data', 'day.html')
+    with open(file_path) as file:
         src = file.read()
     soup = BeautifulSoup(src, 'lxml')
     group_lxml = soup.find('div', id="wrapperTables").find_all('div')
@@ -61,7 +57,8 @@ def week_task():
             driver.get(url=f"http://{os.environ['WEB_APP_HOST']}:8000/api/week/")
             driver.set_window_size(1900, 920)
             elements = driver.find_elements(By.CLASS_NAME, 'content')
-            elements[-1].screenshot(f'bot/data/{i}.png')
+            file_path = os.path.join(settings.BASE_DIR, 'data', '{}.png'.format(i))
+            elements[-1].screenshot(file_path)
         except:
             pass
     driver.quit()
@@ -69,36 +66,39 @@ def week_task():
 
 @shared_task
 def pars_html():
+    session = HTMLSession()
+
     groups = []
-    data = []
-    with open('bot/data/lessons.json') as file:
+    data = {}
+    global_lessons = {}
+    file_path = os.path.join(settings.BASE_DIR, 'data', 'lessons.json')
+    # file_path = "data/lessons.json"
+    with open(file_path) as file:
         test = json.load(file)
-    try:
-        driver = webdriver.Remote('http://selenium:4444', desired_capabilities=DesiredCapabilities.CHROME)
-        driver.get(url='https://mgkct.minskedu.gov.by/персоналии/учащимся/расписание-занятий-на-день')
-        time.sleep(3)
-        with open('bot/data/day.html', 'w') as file:
-            file.write(driver.page_source)
-    except:
-        pass
-    finally:
-        driver.quit()
-    with open('bot/data/day.html') as file:
+    file_path = os.path.join(settings.BASE_DIR, 'data', 'day.html')
+    # file_path = 'data/day.html'
+
+    response = session.get('https://mgkct.minskedu.gov.by/персоналии/учащимся/расписание-занятий-на-день')
+    response.html.render()
+    with open(file_path, 'w') as file:
+        file.write(response.html.html)
+    print(123)
+    with open(file_path) as file:
         src = file.read()
     soup = BeautifulSoup(src, 'lxml')
     group_lxml = soup.find('div', id="wrapperTables").find_all('div')
     week_day_today = group_lxml[0].text.strip().split(' ')[-1]
-    if week_day_today != test[0]['week_day']:
+    if week_day_today != test['info']['week_day']:
         for item in group_lxml[::2]:
             groups.append(item.text.strip().split(' ')[0])
         if datetime.date.weekday(datetime.date.today()) == 5:
             datetime_now = (datetime.date.today() + datetime.timedelta(days=2)).strftime('%d.%m.%y')
         else:
             datetime_now = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%d.%m.%y')
-        data.append({
+        data['info'] = {
             'day': datetime_now,
             'week_day': week_day_today
-        })
+        }
         for group_number in groups:
             lessons = []
             group_obj = soup.find('div', string=f'{group_number} - {week_day_today}').find_next().find_all('tr')
@@ -120,53 +120,15 @@ def pars_html():
                     except:
                         lesson['cabinet'] = "-"
                     lessons.append(lesson)
-                data.append({group_number: lessons})
+                global_lessons[group_number] = lessons
             else:
-                data.append({f'{group_number}': [{
+                global_lessons[group_number] = [{
                     'number_lesson': None,
                     'title': None,
                     'cabinet': None,
                     }]
-                })
-        with open('bot/data/lessons.json', 'w', encoding='utf-8') as file:
+        data['lessons'] = global_lessons
+        file_path = os.path.join(settings.BASE_DIR, 'data', 'lessons.json')
+        # file_path = "data/lessons.json"
+        with open(file_path, 'w', encoding='utf-8') as file:
             json.dump(data, file, indent=4, ensure_ascii=False)
-        asyncio.run(class_schedule_task())
-
-
-async def class_schedule_task():
-    chats = requests.get(f"http://{os.environ['WEB_APP_HOST']}:8000/api/chats/")
-    for chat in chats.json():
-        try:
-            if chat['is_sender'] == True:
-                group_number = str(chats['group_number'])
-                with open('bot/data/lessons.json') as file:
-                    src = json.load(file)
-                group_data = []
-                for item in src:
-                    for key, value in item.items():
-                        if key == group_number:
-                            group_data = value
-                text = ''
-                text += f'*Группа {group_number}*\n'
-                text += f"*{src[0]['week_day']} - {src[0]['day']}*\n"
-                if group_data[0]['number_lesson'] != None:
-                    for i in group_data:
-                        count = 0
-                        text += f'\n*{i["number_lesson"]} пара*'
-                        for lir in i["title"]:
-                            if count == 0:
-                                text += '\n'
-                            try:
-                                a = int(lir)
-                                if count != 0:
-                                    text += '\n'
-                                text += str(a)
-                            except:
-                                text += lir
-                            count += 1
-                        text += f'\nкаб: {i["cabinet"]}\n'
-                else:
-                    text += '\nпар нет, иди расчилься'
-                await bot.send_message(chat_id=str(chats['telegram_id']), text=text, parse_mode="Markdown")
-        except:
-            pass
