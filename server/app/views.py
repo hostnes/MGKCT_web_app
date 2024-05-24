@@ -54,5 +54,20 @@ class GroupsList(generics.ListAPIView):
         return Response(numbers)
 
 
+class WeekGroupsLessonsView(APIView):
+    def get(self, request, group):
+        clean_data = []
+        clean_dict = {}
+        file_path = os.path.join(settings.BASE_DIR, 'data', 'week_lessons.json')
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+
+        for day in data:
+            clean_dict["info"] = day["info"]
+            clean_dict[str(group)] = day["lessons"][group]
+            clean_data.append(clean_dict)
+            clean_dict = {}
+        return JsonResponse(clean_data, safe=False, json_dumps_params={'ensure_ascii': False})
+
 
 
