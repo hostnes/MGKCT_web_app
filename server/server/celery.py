@@ -25,13 +25,10 @@ app.conf.timezone = settings.TIME_ZONE
 app.conf.beat_schedule = {
     'pars_students_html': {
         'task': 'app.tasks.pars_students_html',
-        'schedule': crontab(minute='*/1'),
+        'schedule': crontab(minute='*/10'),
     },
-}
-
-app.conf.beat_schedule = {
     'pars_teachers_week': {
         'task': 'app.tasks.pars_teachers_week',
-        'schedule': crontab(minute='*/1'),
+        'schedule': crontab(minute='*/10'),
     },
 }
