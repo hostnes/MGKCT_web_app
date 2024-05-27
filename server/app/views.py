@@ -64,11 +64,9 @@ class WeekGroupsLessonsView(APIView):
             data = json.load(file)
 
         for day in data:
-            clean_dict["info"] = day["info"]
-            clean_dict[str(group)] = day["lessons"][group]
-            clean_data.append(clean_dict)
-            clean_dict = {}
-        return JsonResponse(clean_data, safe=False, json_dumps_params={'ensure_ascii': False})
+            if group in day:
+                print(day)
+                return JsonResponse(day, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
 class WeekTeachersLessonsView(APIView):
@@ -78,6 +76,8 @@ class WeekTeachersLessonsView(APIView):
             data = json.load(file)
         for item in data:
             for key, value in item.items():
+                print(teacher)
+                print(key.split(" ")[0])
                 if key.split(" ")[0] == teacher:
                     return JsonResponse(value, safe=False, json_dumps_params={'ensure_ascii': False})
 

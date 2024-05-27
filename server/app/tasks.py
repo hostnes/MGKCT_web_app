@@ -112,7 +112,7 @@ def pars_teachers_week():
             lesson = {}
             for lesson_lxml in teacher_week_lxml[i].find_all("td")[0::2]:
                 lesson["number_lesson"] = lessons_count
-                lesson["title"] = str(teacher_week_lxml[count].find_all("td")[table_lessons].text.partition("-")[2].strip())
+                lesson["title"] = str(teacher_week_lxml[count].find_all("td")[table_lessons].text)
                 if " " == str(teacher_week_lxml[count].find_all("td")[table_lessons + 1].text):
                     lesson["cabinet"] = "-"
                 else:
