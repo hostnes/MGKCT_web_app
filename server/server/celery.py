@@ -6,6 +6,7 @@ from celery import Celery
 from celery.schedules import crontab
 from django.conf import settings
 
+print(os.path)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
 
 app = Celery('server')
@@ -22,15 +23,15 @@ django.setup()
 app.conf.timezone = settings.TIME_ZONE
 
 app.conf.beat_schedule = {
-    'week_task': {
-        'task': 'app.tasks.week_task',
-        'schedule': crontab(hour='14', minute='10'),
+    'pars_students_html': {
+        'task': 'app.tasks.pars_students_html',
+        'schedule': crontab(minute='*/1'),
     },
 }
 
 app.conf.beat_schedule = {
-    'pars_html': {
-        'task': 'app.tasks.pars_html',
-        'schedule': crontab(minute='*/10'),
+    'pars_teachers_week': {
+        'task': 'app.tasks.pars_teachers_week',
+        'schedule': crontab(minute='*/1'),
     },
 }

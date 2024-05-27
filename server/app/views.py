@@ -12,7 +12,15 @@ from rest_framework.response import Response
 
 class GroupsLessonsView(APIView):
     def get(self, request):
-        file_path = os.path.join(settings.BASE_DIR, 'data', 'lessons1.json')
+        file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+        return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
+
+
+class TeachersLessonsView(APIView):
+    def get(self, request):
+        file_path = os.path.join(settings.BASE_DIR, 'data', 'teachers_week_lessons.json')
         with open(file_path, 'r') as file:
             data = json.load(file)
         return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
@@ -20,7 +28,7 @@ class GroupsLessonsView(APIView):
 
 class LessonsByGroupView(APIView):
     def get(self, request, group):
-        file_path = os.path.join(settings.BASE_DIR, 'data', 'lessons1.json')
+        file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
         with open(file_path, 'r') as file:
             data = json.load(file)
         group_data = data['lessons'][str(group)]
@@ -34,13 +42,6 @@ class LessonsByGroupView(APIView):
 class TeachersList(generics.ListAPIView):
     queryset = Teacher.objects.all()
     serializer_class = TeacherSerializer
-
-
-class GetTeachersView(APIView):
-    def get(self, request):
-        teachers = Teacher.objects.all()
-        print(teachers)
-        return JsonResponse(teachers, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
 class GroupsList(generics.ListAPIView):
@@ -58,7 +59,7 @@ class WeekGroupsLessonsView(APIView):
     def get(self, request, group):
         clean_data = []
         clean_dict = {}
-        file_path = os.path.join(settings.BASE_DIR, 'data', 'week_lessons.json')
+        file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
         with open(file_path, 'r') as file:
             data = json.load(file)
 
@@ -68,6 +69,20 @@ class WeekGroupsLessonsView(APIView):
             clean_data.append(clean_dict)
             clean_dict = {}
         return JsonResponse(clean_data, safe=False, json_dumps_params={'ensure_ascii': False})
+
+
+class WeekTeachersLessonsView(APIView):
+    def get(self, request, teacher):
+        file_path = os.path.join(settings.BASE_DIR, 'data', 'teachers_week_lessons.json')
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+        for item in data:
+            for key, value in item.items():
+                if key.split(" ")[0] == teacher:
+                    return JsonResponse(value, safe=False, json_dumps_params={'ensure_ascii': False})
+
+        return JsonResponse([], safe=False, json_dumps_params={'ensure_ascii': False})
+
 
 
 

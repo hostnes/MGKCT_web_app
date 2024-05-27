@@ -1,55 +1,42 @@
+version: '3'
+
 services:
-
-#  redis:
-#    image: redis:7.0.5-alpine
-#    hostname: redis
-
-#  selenium:
-#    image: selenium/standalone-chrome:4.7.1-20221208
-#    hostname: selenium
-#    ports:
-#      - '4444:4444'
-#    privileged: true
-#    shm_size: 2g
-#    environment:
-#      TZ: Europe/Moscow
-
   web-app:
     build: .
     ports:
       - '8000:8000'
     volumes:
-      - ./server/:/workdir/server
+      - .:/project
     command: >
       sh -c "python server/manage.py runserver 0.0.0.0:8000"
-#    depends_on:
-#      - redis
     environment:
       TZ: Europe/Moscow
 
-#  app:
-#    build: .
-#    volumes:
-#      - ./server:/workdir/server
-#    command: python server/bot/main.py
-#    depends_on:
-#      - web-app
-#      - selenium
-#    environment:
-#      WEB_APP_HOST: web-app
-#      TZ: Europe/Moscow
+  cel_worker:
+    build: .
+    container_name: celery_worker
+    command: ./scripts/start_celery_worker.sh
+    links:
+      - redis
+    volumes:
+      - .:/project
+    depends_on:
+      - redis
 
-#  worker:
-#    build: .
-#    hostname: worker
-#    volumes:
-#      - ./server/:/workdir/server
-#    command: ['celery', '--workdir=./server', '-A', 'celery_app.app', 'worker', '-B', '-l', 'INFO']
-#    links:
-#      - redis
-#    depends_on:
-#      - web-app
-#      - app
-#    environment:
-#      WEB_APP_HOST: web-app
-#      TZ: Europe/Moscow
+  cel_beat:
+    build: .
+    container_name: celery_beat
+    command: ./scripts/start_celery_beat.sh
+    links:
+      - redis
+    volumes:
+      - .:/project
+    depends_on:
+      - cel_worker
+      - redis
+
+  redis:
+    image: redis:6
+    container_name: redis
+    ports:
+      - "6379:6379"
