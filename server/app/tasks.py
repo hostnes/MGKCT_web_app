@@ -93,13 +93,10 @@ def pars_students_week():
 
 @shared_task
 def pars_teachers_week():
-    session = HTMLSession()
+    url = 'https://mgkct.minskedu.gov.by/персоналии/преподавателям/расписание-занятий-на-неделю'
+    html = fetch_html(url)
+    content_lxml = parse_html(html)
 
-    response = session.get('https://mgkct.minskedu.gov.by/персоналии/преподавателям/расписание-занятий-на-неделю')
-    response.html.render()
-    soup = BeautifulSoup(response.html.html, 'lxml')
-    main_lxml = soup.find("div", id="main-p")
-    content_lxml = main_lxml.find("div", class_="content")
     teachers = []
     global_teacher_count = 0
     for i in content_lxml.find_all("h2"):
@@ -123,13 +120,14 @@ def pars_teachers_week():
             lesson = {}
             for lesson_lxml in teacher_week_lxml[i].find_all("td")[0::2]:
                 lesson["number_lesson"] = lessons_count
-                lesson["title"] = str(
-                    teacher_week_lxml[count].find_all("td")[table_lessons].text.partition("-")[2].strip())
+
+                if teacher_week_lxml[count].find_all("td")[table_lessons].text.partition("-")[2].strip() == "":
+                    lesson["title"] = "-"
+                    lesson["group"] = "-"
                 if " " == str(teacher_week_lxml[count].find_all("td")[table_lessons + 1].text):
                     lesson["cabinet"] = "-"
                 else:
                     lesson["cabinet"] = str(teacher_week_lxml[count].find_all("td")[table_lessons + 1].text)
-                lesson["group"] = str(teacher_week_lxml[count].find_all("td")[table_lessons].text.split("-")[0])
 
                 lessons.append(lesson)
                 lessons_count += 1
