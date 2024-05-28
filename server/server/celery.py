@@ -24,7 +24,7 @@ app.conf.timezone = settings.TIME_ZONE
 
 app.conf.beat_schedule = {
     'pars_students_html': {
-        'task': 'app.tasks.pars_students_html',
+        'task': 'app.tasks.pars_students_week',
         'schedule': crontab(minute='*/10'),
     },
     'pars_teachers_week': {

@@ -920,7 +920,7 @@
                     {
                         "number_lesson": 4,
                         "title": "Лекс-грам практ(ф-в)",
-                        "cabinet": "-",
+                        "cabinet": "3-209",
                         "group": "80"
                     },
                     {
@@ -1176,7 +1176,7 @@
                     {
                         "number_lesson": 2,
                         "title": "Бел Яз Проф(ПР)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-317",
                         "group": "2. 70"
                     },
                     {
@@ -1974,25 +1974,25 @@
                     {
                         "number_lesson": 1,
                         "title": "КПиЯП(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "3-212",
                         "group": "2. 64"
                     },
                     {
                         "number_lesson": 2,
                         "title": "КПиЯП(КП)",
-                        "cabinet": "-",
+                        "cabinet": "3-212",
                         "group": "2. 64"
                     },
                     {
                         "number_lesson": 3,
                         "title": "КПиЯП(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "3-212",
                         "group": "2. 63"
                     },
                     {
                         "number_lesson": 4,
                         "title": "Базы данных(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "3-212",
                         "group": "2. 64"
                     },
                     {
@@ -2784,19 +2784,19 @@
                     {
                         "number_lesson": 2,
                         "title": "Уч практ(Пр-ка)",
-                        "cabinet": "-",
+                        "cabinet": "604",
                         "group": "2. 78"
                     },
                     {
                         "number_lesson": 3,
                         "title": "Уч практ(Пр-ка)",
-                        "cabinet": "-",
+                        "cabinet": "604",
                         "group": "2. 78"
                     },
                     {
                         "number_lesson": 4,
                         "title": "Уч практ(Пр-ка)",
-                        "cabinet": "-",
+                        "cabinet": "604",
                         "group": "2. 78"
                     },
                     {
@@ -4118,13 +4118,13 @@
                     {
                         "number_lesson": 1,
                         "title": "Основы инж гр(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-319",
                         "group": "1. 71"
                     },
                     {
                         "number_lesson": 2,
                         "title": "Основы инж гр(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-319",
                         "group": "1. 71"
                     },
                     {
@@ -5208,7 +5208,7 @@
                     {
                         "number_lesson": 4,
                         "title": "Матем в професс(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-111",
                         "group": "165*"
                     },
                     {
@@ -7876,13 +7876,13 @@
                     {
                         "number_lesson": 2,
                         "title": "Рус Яз(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-322",
                         "group": "79"
                     },
                     {
                         "number_lesson": 3,
                         "title": "Рус Лит(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-322",
                         "group": "79"
                     },
                     {
@@ -8138,7 +8138,7 @@
                     {
                         "number_lesson": 1,
                         "title": "Ин Яз(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "3-210",
                         "group": "1. 83"
                     },
                     {
@@ -11896,19 +11896,19 @@
                     {
                         "number_lesson": 2,
                         "title": "Уч прак проф(Пр-ка)",
-                        "cabinet": "604",
+                        "cabinet": "2-206",
                         "group": "2. 75"
                     },
                     {
                         "number_lesson": 3,
                         "title": "Уч прак проф(Пр-ка)",
-                        "cabinet": "604",
+                        "cabinet": "2-206",
                         "group": "2. 75"
                     },
                     {
                         "number_lesson": 4,
                         "title": "Уч прак проф(Пр-ка)",
-                        "cabinet": "604",
+                        "cabinet": "2-206",
                         "group": "2. 75"
                     },
                     {
@@ -12426,7 +12426,7 @@
                     {
                         "number_lesson": 1,
                         "title": "Инструмент ПО(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "402",
                         "group": "73"
                     },
                     {
@@ -14046,7 +14046,7 @@
                     {
                         "number_lesson": 3,
                         "title": "Биология(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "3-209",
                         "group": "80"
                     },
                     {
@@ -14838,19 +14838,19 @@
                     {
                         "number_lesson": 1,
                         "title": "ОсА(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.2-318",
                         "group": "166*"
                     },
                     {
                         "number_lesson": 2,
                         "title": "ОсА(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.2-318",
                         "group": "166*"
                     },
                     {
                         "number_lesson": 3,
                         "title": "Защита КИ(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.2-318",
                         "group": "166*"
                     },
                     {
@@ -15928,13 +15928,13 @@
                     {
                         "number_lesson": 4,
                         "title": "Теория вероятн(Лек)",
-                        "cabinet": "Кн.2-312",
+                        "cabinet": "Кн.1-322",
                         "group": "166*"
                     },
                     {
                         "number_lesson": 5,
                         "title": "Мех модули сист(ЛР)",
-                        "cabinet": "Кн.2-312",
+                        "cabinet": "Кн.1-322",
                         "group": "1. 60"
                     },
                     {
@@ -16446,25 +16446,25 @@
                     {
                         "number_lesson": 1,
                         "title": "Уч практ по МУБ(Пр-ка)",
-                        "cabinet": "-",
+                        "cabinet": "3-201м",
                         "group": "1. 61"
                     },
                     {
                         "number_lesson": 2,
                         "title": "Уч практ по МУБ(Пр-ка)",
-                        "cabinet": "-",
+                        "cabinet": "3-201м",
                         "group": "1. 61"
                     },
                     {
                         "number_lesson": 3,
                         "title": "Уч практ по МУБ(Пр-ка)",
-                        "cabinet": "-",
+                        "cabinet": "3-201м",
                         "group": "1. 61"
                     },
                     {
                         "number_lesson": 4,
                         "title": "ПО и програм АО(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "3-111",
                         "group": "1. 61"
                     },
                     {
@@ -16726,13 +16726,13 @@
                     {
                         "number_lesson": 3,
                         "title": "ЗНТЧС(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.2-312",
                         "group": "71"
                     },
                     {
                         "number_lesson": 4,
                         "title": "ЗНТЧС(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.2-312",
                         "group": "71"
                     },
                     {
@@ -16982,19 +16982,19 @@
                     {
                         "number_lesson": 1,
                         "title": "Тех и обо ВЭиПХ(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-201",
                         "group": "163*"
                     },
                     {
                         "number_lesson": 2,
                         "title": "Тех и обо ВЭиПХ(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-201",
                         "group": "163*"
                     },
                     {
                         "number_lesson": 3,
                         "title": "Тех и обор сбор(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-201",
                         "group": "163*"
                     },
                     {
@@ -17256,19 +17256,19 @@
                     {
                         "number_lesson": 2,
                         "title": "Уч прак проф(Пр-ка)",
-                        "cabinet": "-",
+                        "cabinet": "2-105",
                         "group": "1. 75"
                     },
                     {
                         "number_lesson": 3,
                         "title": "Уч прак проф(Пр-ка)",
-                        "cabinet": "-",
+                        "cabinet": "2-105",
                         "group": "1. 75"
                     },
                     {
                         "number_lesson": 4,
                         "title": "Уч прак проф(Пр-ка)",
-                        "cabinet": "-",
+                        "cabinet": "2-105",
                         "group": "1. 75"
                     },
                     {
@@ -18870,13 +18870,13 @@
                     {
                         "number_lesson": 3,
                         "title": "ТСА и СУО(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-319",
                         "group": "60"
                     },
                     {
                         "number_lesson": 4,
                         "title": "ТСА и СУО(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-319",
                         "group": "60"
                     },
                     {
@@ -19668,19 +19668,19 @@
                     {
                         "number_lesson": 2,
                         "title": "Экономика орган(КП)",
-                        "cabinet": "-",
+                        "cabinet": "2-211",
                         "group": "2. 68"
                     },
                     {
                         "number_lesson": 3,
                         "title": "Бух учет(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "2-211",
                         "group": "1. 63"
                     },
                     {
                         "number_lesson": 4,
                         "title": "Экономика орган(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "2-211",
                         "group": "1. 68"
                     },
                     {
@@ -19942,13 +19942,13 @@
                     {
                         "number_lesson": 3,
                         "title": "Мат комп эл тех(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "701",
                         "group": "76"
                     },
                     {
                         "number_lesson": 4,
                         "title": "Стандартизация(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "701",
                         "group": "69"
                     },
                     {
@@ -20734,37 +20734,37 @@
                     {
                         "number_lesson": 1,
                         "title": "Сис авт проект(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "2-109",
                         "group": "1. 78"
                     },
                     {
                         "number_lesson": 2,
                         "title": "Сис авт проект(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "2-109",
                         "group": "1. 77"
                     },
                     {
                         "number_lesson": 3,
                         "title": "Проект МУ(КП)",
-                        "cabinet": "-",
+                        "cabinet": "2-109",
                         "group": "2. 69"
                     },
                     {
                         "number_lesson": 4,
                         "title": "Сис авт проект(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "2-109",
                         "group": "77"
                     },
                     {
                         "number_lesson": 5,
                         "title": "Проект МУ(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "2-109",
                         "group": "1. 69"
                     },
                     {
                         "number_lesson": 6,
                         "title": "Проект МУ(КП)",
-                        "cabinet": "-",
+                        "cabinet": "2-109",
                         "group": "1. 69"
                     }
                 ]
@@ -21812,13 +21812,13 @@
                     {
                         "number_lesson": 2,
                         "title": "ОсА(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.132",
                         "group": "165*"
                     },
                     {
                         "number_lesson": 3,
                         "title": "ОсА(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.132",
                         "group": "165*"
                     },
                     {
@@ -22354,13 +22354,13 @@
                     {
                         "number_lesson": 3,
                         "title": "Эл машины(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-124",
                         "group": "70"
                     },
                     {
                         "number_lesson": 4,
                         "title": "ТОЭ(Лек)",
-                        "cabinet": "-",
+                        "cabinet": "Кн.1-124",
                         "group": "70"
                     },
                     {
@@ -23682,7 +23682,7 @@
                     {
                         "number_lesson": 1,
                         "title": "Мед Под(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "2-211",
                         "group": "2. 80"
                     },
                     {
@@ -24486,7 +24486,7 @@
                     {
                         "number_lesson": 1,
                         "title": "ДП(ЛР)",
-                        "cabinet": "-",
+                        "cabinet": "704",
                         "group": "1. 80"
                     },
                     {
