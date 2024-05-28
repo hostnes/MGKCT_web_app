@@ -124,6 +124,9 @@ def pars_teachers_week():
                 if teacher_week_lxml[count].find_all("td")[table_lessons].text.partition("-")[2].strip() == "":
                     lesson["title"] = "-"
                     lesson["group"] = "-"
+                else:
+                    lesson["title"] = str(teacher_week_lxml[count].find_all("td")[table_lessons].text.partition("-")[2].strip())
+                    lesson["group"] = str(teacher_week_lxml[count].find_all("td")[table_lessons].text.split("-")[0])
                 if " " == str(teacher_week_lxml[count].find_all("td")[table_lessons + 1].text):
                     lesson["cabinet"] = "-"
                 else:

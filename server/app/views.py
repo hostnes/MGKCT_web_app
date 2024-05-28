@@ -40,8 +40,11 @@ class LessonsByGroupView(APIView):
 
 
 class TeachersList(generics.ListAPIView):
-    queryset = Teacher.objects.all()
     serializer_class = TeacherSerializer
+
+    def get_queryset(self):
+        return Teacher.objects.all().order_by('name')
+
 
 
 class GroupsList(generics.ListAPIView):
