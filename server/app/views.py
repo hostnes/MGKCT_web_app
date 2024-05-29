@@ -68,7 +68,6 @@ class WeekGroupsLessonsView(APIView):
 
         for day in data:
             if group in day:
-                print(day)
                 return JsonResponse(day, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
@@ -79,8 +78,6 @@ class WeekTeachersLessonsView(APIView):
             data = json.load(file)
         for item in data:
             for key, value in item.items():
-                print(teacher)
-                print(key.split(" ")[0])
                 if key.split(" ")[0] == teacher:
                     return JsonResponse(value, safe=False, json_dumps_params={'ensure_ascii': False})
 

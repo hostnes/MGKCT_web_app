@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from celery import shared_task
 import os
 from requests_html import HTMLSession
@@ -154,3 +156,6 @@ def pars_teachers_week():
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(clean_data, file, indent=4, ensure_ascii=False)
 
+@shared_task
+def test_task():
+    print('test_task', datetime.now())
