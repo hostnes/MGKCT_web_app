@@ -21,6 +21,30 @@ def parse_html(html):
     return main_lxml.find("div", class_="content")
 
 
+def calculate_students_lesson_title(data):
+    lessons = ""
+    count = 0
+    for i in data:
+        if count < 2:
+            lessons += i
+            lessons += ' '
+            count += 1
+        else:
+            lessons += "\n"
+            count = 0
+    return lessons
+
+
+def calculate_students_cabinets_title(data):
+    cabinets = ""
+    count = 0
+    for i in data:
+        cabinets += i
+        cabinets += ' '
+        count += 1
+    return cabinets
+
+
 @shared_task
 def pars_students_week():
     url = 'https://mgkct.minskedu.gov.by/персоналии/учащимся/расписание-занятий-на-неделю'
@@ -48,17 +72,24 @@ def pars_students_week():
             info['day'] = student_week_lxml[0].find_all("th")[day_count].text.split(" ")[-1]
             day_data["info"] = info
             lesson = {}
-            try :
+            try:
                 for lesson_lxml in student_week_lxml[i].find_all("td")[0::2]:
                     lesson["number_lesson"] = lessons_count
                     if " " == str(student_week_lxml[count].find_all("td")[table_lessons].text):
                         lesson["title"] = "-"
                     else:
-                        lesson["title"] = str(student_week_lxml[count].find_all("td")[table_lessons].text)
+                        td_text = student_week_lxml[count].find_all("td")[table_lessons].get_text(separator="|")
+
+                        td_elements = [elem.strip() for elem in td_text.split('|') if elem.strip()]
+                        lesson["title"] = calculate_students_lesson_title(td_elements)
                     if " " == str(student_week_lxml[count].find_all("td")[table_lessons + 1].text):
                         lesson["cabinet"] = "-"
                     else:
-                        lesson["cabinet"] = str(student_week_lxml[count].find_all("td")[table_lessons + 1].text)
+                        td_text = student_week_lxml[count].find_all("td")[table_lessons + 1].get_text(separator="|")
+                        td_elements = [elem.strip() for elem in td_text.split('|') if elem.strip()]
+                        if len(td_elements) > 1:
+                            cabiinets = ""
+                        lesson["cabinet"] = calculate_students_cabinets_title(td_elements)
                     lessons.append(lesson)
                     lessons_count += 1
                     count += 1
@@ -155,7 +186,3 @@ def pars_teachers_week():
     file_path = os.path.join(settings.BASE_DIR, 'data', 'teachers_week_lessons.json')
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(clean_data, file, indent=4, ensure_ascii=False)
-
-@shared_task
-def test_task():
-    print('test_task', datetime.now())

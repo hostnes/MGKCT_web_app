@@ -32,9 +32,5 @@ app.conf.beat_schedule = {
         'task': 'app.tasks.pars_teachers_week',
         'schedule': crontab(minute='*/10'),
     },
-    'test_task': {
-        'task': 'app.tasks.test_task',
-        'schedule': crontab(minute='*/10'),
-    },
 }
 
