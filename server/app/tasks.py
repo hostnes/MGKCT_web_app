@@ -23,6 +23,7 @@ def parse_html(html):
 
 def calculate_students_lesson_title(data):
     lessons = ""
+    total_count = 1
     count = 0
     for i in data:
         if count < 2:
@@ -30,10 +31,14 @@ def calculate_students_lesson_title(data):
             lessons += ' '
             count += 1
         else:
-            lessons += "\n"
+            lessons += i
+            lessons += ' '
+            count += 1
+            if len(data) != total_count:
+                lessons += "\n"
             count = 0
+        total_count += 1
     return lessons
-
 
 def calculate_students_cabinets_title(data):
     cabinets = ""
