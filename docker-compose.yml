@@ -12,7 +12,7 @@ services:
     environment:
       TZ: Europe/Moscow
 
-  cel_worker:
+  celery_worker:
     build: .
     container_name: celery_worker
     command: ./scripts/start_celery_worker.sh
@@ -23,7 +23,7 @@ services:
     depends_on:
       - redis
 
-  cel_beat:
+  celery_beat:
     build: .
     container_name: celery_beat
     command: ./scripts/start_celery_beat.sh
@@ -32,7 +32,7 @@ services:
     volumes:
       - .:/project
     depends_on:
-      - cel_worker
+      - celery_worker
       - redis
 
   redis:
@@ -40,3 +40,9 @@ services:
     container_name: redis
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --dir /data --save 60 1 --loglevel warning
+
+volumes:
+  redis_data:
