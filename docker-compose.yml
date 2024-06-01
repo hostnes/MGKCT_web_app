@@ -12,7 +12,7 @@ services:
     environment:
       TZ: Europe/Moscow
 
-  celery_worker:
+  cel_worker:
     build: .
     container_name: celery_worker
     command: ./scripts/start_celery_worker.sh
@@ -23,7 +23,7 @@ services:
     depends_on:
       - redis
 
-  celery_beat:
+  cel_beat:
     build: .
     container_name: celery_beat
     command: ./scripts/start_celery_beat.sh
@@ -32,7 +32,7 @@ services:
     volumes:
       - .:/project
     depends_on:
-      - celery_worker
+      - cel_worker
       - redis
 
   redis:
@@ -41,8 +41,5 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - redis_data:/data
-    command: redis-server --appendonly yes --dir /data --save 60 1 --loglevel warning
-
-volumes:
-  redis_data:
+      - ./redis_data:/data
+    command: redis-server --dir /data --stop-writes-on-bgsave-error no
