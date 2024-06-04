@@ -31,6 +31,7 @@ class LessonsByGroupView(APIView):
         file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
         with open(file_path, 'r') as file:
             data = json.load(file)
+        print(group)
         group_data = data['lessons'][str(group)]
         result = {}
         result['info'] = data['info']

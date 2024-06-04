@@ -32,7 +32,7 @@ services:
     volumes:
       - .:/project
     depends_on:
-      - cel_worker
+      - cel_woxrker
       - redis
 
   redis:

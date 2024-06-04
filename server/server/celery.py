@@ -26,11 +26,11 @@ app.autodiscover_tasks(['app'])
 app.conf.beat_schedule = {
     'pars_students_html': {
         'task': 'app.tasks.pars_students_week',
-        'schedule': crontab(minute='*/10'),
+        'schedule': crontab(minute='*/40'),
     },
     'pars_teachers_week': {
         'task': 'app.tasks.pars_teachers_week',
-        'schedule': crontab(minute='*/10'),
+        'schedule': crontab(minute='*/40'),
     },
 }
 
