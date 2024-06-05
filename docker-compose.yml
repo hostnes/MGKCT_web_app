@@ -8,7 +8,8 @@ services:
     volumes:
       - .:/project
     command: >
-      sh -c "python server/manage.py runserver 0.0.0.0:8000"
+        sh -c "cd server && gunicorn --bind 0.0.0.0:8000 server.wsgi"
+
     environment:
       TZ: Europe/Moscow
 
@@ -41,9 +42,9 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - redis-data:/data
+      - redis_data:/data
     command: ["redis-server", "--save", "60", "1", "--dir", "/data"]
 
 
 volumes:
-  redis-data:
+  redis_data:
