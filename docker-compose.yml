@@ -45,6 +45,14 @@ services:
       - redis_data:/data
     command: ["redis-server", "--save", "60", "1", "--dir", "/data"]
 
+  nginx:
+    image: nginx:1.19.8-alpine
+    depends_on:
+      - web-app
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx-conf.d:/usr/local/etc/nginx/nginx.conf
 
 volumes:
   redis_data:
