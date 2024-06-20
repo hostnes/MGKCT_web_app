@@ -1,0 +1,570 @@
+[
+    {
+        "model": "app.teacher",
+        "pk": 1,
+        "fields": {
+            "name": "Щербич Егор Вадимович",
+            "img_path": "teachers/teacher_1.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 2,
+        "fields": {
+            "name": "Шаповалова Юлия Викторовна",
+            "img_path": "teachers/teacher_2.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 3,
+        "fields": {
+            "name": "Шавейко Алла Александровна",
+            "img_path": "teachers/teacher_3.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 4,
+        "fields": {
+            "name": "Хомченко Ирина Ивановна",
+            "img_path": "teachers/teacher_4.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 5,
+        "fields": {
+            "name": "Хващевская Ольга Николаевна",
+            "img_path": "teachers/teacher_5.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 6,
+        "fields": {
+            "name": "Харевская Елена Томасовна",
+            "img_path": "teachers/teacher_6.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 7,
+        "fields": {
+            "name": "Фетисова Юлия Борисовна",
+            "img_path": "teachers/teacher_7.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 8,
+        "fields": {
+            "name": "Федкевич Диана Андреевна",
+            "img_path": "teachers/teacher_8.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 9,
+        "fields": {
+            "name": "Усикова Людмила Николаевна",
+            "img_path": "teachers/teacher_9.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 10,
+        "fields": {
+            "name": "Тихонович Наталья Викторовна",
+            "img_path": "teachers/teacher_10.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 11,
+        "fields": {
+            "name": "Тарасова Елена Ивановна",
+            "img_path": "teachers/teacher_11.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 12,
+        "fields": {
+            "name": "Сушкевич Евгения Петровна",
+            "img_path": "teachers/teacher_12.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 13,
+        "fields": {
+            "name": "Скобля Янина Эдуардовна",
+            "img_path": "teachers/teacher_13.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 14,
+        "fields": {
+            "name": "Сергун Тамара Сергеевна",
+            "img_path": "teachers/teacher_14.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 15,
+        "fields": {
+            "name": "Семенова Лилия Николаевна",
+            "img_path": "teachers/teacher_15.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 16,
+        "fields": {
+            "name": "Северин Александр Владимирович",
+            "img_path": "teachers/teacher_16.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 17,
+        "fields": {
+            "name": "Сахарова Ирина Викторовна",
+            "img_path": "teachers/teacher_17.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 18,
+        "fields": {
+            "name": "Самохвал Наталья Николаевна ",
+            "img_path": "teachers/teacher_18.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 19,
+        "fields": {
+            "name": "Самарская Наталья Витальевна",
+            "img_path": "teachers/teacher_19.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 20,
+        "fields": {
+            "name": "Романович Светлана Георгиевна",
+            "img_path": "teachers/teacher_20.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 21,
+        "fields": {
+            "name": "Протасеня Анастасия Олеговна",
+            "img_path": "teachers/teacher_21.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 22,
+        "fields": {
+            "name": "Прокопович Марина Евгеньевна",
+            "img_path": "teachers/teacher_22.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 23,
+        "fields": {
+            "name": "Попеня Евгений Эдуардович",
+            "img_path": "teachers/teacher_23.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 24,
+        "fields": {
+            "name": "Поклад Татьяна Ивановна",
+            "img_path": "teachers/teacher_24.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 25,
+        "fields": {
+            "name": "Плыгавко Мария Александровна",
+            "img_path": "teachers/teacher_25.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 26,
+        "fields": {
+            "name": "Плаксин Ефим Борисович",
+            "img_path": "teachers/teacher_26.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 27,
+        "fields": {
+            "name": "Пешкова Галина Дмитриевна",
+            "img_path": "teachers/teacher_27.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 28,
+        "fields": {
+            "name": "Петрович Валентина Леонидовна",
+            "img_path": "teachers/teacher_28.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 29,
+        "fields": {
+            "name": "Перепелкин Анатолий Михайлович",
+            "img_path": "teachers/teacher_29.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 30,
+        "fields": {
+            "name": "Паршаков Евгений Дмитриевич",
+            "img_path": "teachers/teacher_30.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 31,
+        "fields": {
+            "name": "Оскерко Владислав Сергеевич",
+            "img_path": "teachers/teacher_31.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 32,
+        "fields": {
+            "name": "Немцева Надежда Александровна",
+            "img_path": "teachers/teacher_32.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 33,
+        "fields": {
+            "name": "Мурашко Анна Васильевна",
+            "img_path": "teachers/teacher_33.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 34,
+        "fields": {
+            "name": "Модель Диана Радиковна",
+            "img_path": "teachers/teacher_34.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 35,
+        "fields": {
+            "name": "Магаревич Елизавета Анатольевна",
+            "img_path": "teachers/teacher_35.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 36,
+        "fields": {
+            "name": "Лозовик Илья Васильевич",
+            "img_path": "teachers/teacher_36.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 37,
+        "fields": {
+            "name": "Лихачева Ольга Петровна",
+            "img_path": "teachers/teacher_37.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 38,
+        "fields": {
+            "name": "Леус Жанна Владимировна ",
+            "img_path": "teachers/teacher_38.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 39,
+        "fields": {
+            "name": "Левонюк Елизавета Анатольевна",
+            "img_path": "teachers/teacher_39.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 40,
+        "fields": {
+            "name": "Левданская Полина Владимировна",
+            "img_path": "teachers/teacher_40.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 41,
+        "fields": {
+            "name": "Лебедкина Наталья Викторовна",
+            "img_path": "teachers/teacher_41.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 42,
+        "fields": {
+            "name": "Кундро Екатерина Анатольевна",
+            "img_path": "teachers/teacher_42.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 43,
+        "fields": {
+            "name": "Кульбеда Максим Павлович",
+            "img_path": "teachers/teacher_43.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 44,
+        "fields": {
+            "name": "Кулецкая Юлия Николаевна",
+            "img_path": "teachers/teacher_44.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 45,
+        "fields": {
+            "name": "Круглик Евгений Леонидович",
+            "img_path": "teachers/teacher_45.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 46,
+        "fields": {
+            "name": "Красовская Анастасия Викторовна",
+            "img_path": "teachers/teacher_46.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 47,
+        "fields": {
+            "name": "Кохно Тамара Аркадьевна",
+            "img_path": "teachers/teacher_47.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 48,
+        "fields": {
+            "name": "Колинко Наталья Георгиевна",
+            "img_path": "teachers/teacher_48.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 49,
+        "fields": {
+            "name": "Козел Александр Александрович",
+            "img_path": "teachers/teacher_49.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 50,
+        "fields": {
+            "name": "Камлюк Виктор Сергеевич",
+            "img_path": "teachers/teacher_50.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 51,
+        "fields": {
+            "name": "Касперович Светлана Александровна",
+            "img_path": "teachers/teacher_51.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 52,
+        "fields": {
+            "name": "Калацкая Татьяна Евгеньевна",
+            "img_path": "teachers/teacher_52.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 53,
+        "fields": {
+            "name": "Зеленкевич Евгений Александрович",
+            "img_path": "teachers/teacher_53.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 54,
+        "fields": {
+            "name": "Зайковская Марина Ивановна",
+            "img_path": "teachers/teacher_54.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 55,
+        "fields": {
+            "name": "Жукова Татьяна Юрьевна",
+            "img_path": "teachers/teacher_55.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 56,
+        "fields": {
+            "name": "Дудко Алла Романовна",
+            "img_path": "teachers/teacher_56.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 57,
+        "fields": {
+            "name": "Дорц Надежда Анатольевна",
+            "img_path": "teachers/teacher_57.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 58,
+        "fields": {
+            "name": "Дзевенская Раиса Иссаковна",
+            "img_path": "teachers/teacher_58.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 59,
+        "fields": {
+            "name": "Громыко Наталья Казимировна",
+            "img_path": "teachers/teacher_59.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 60,
+        "fields": {
+            "name": "Герасюк Владислав Велерьевич",
+            "img_path": "teachers/teacher_60.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 61,
+        "fields": {
+            "name": "Галенко Елена Львовна",
+            "img_path": "teachers/teacher_61.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 62,
+        "fields": {
+            "name": "Воронько Светлана Владимировна",
+            "img_path": "teachers/teacher_62.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 63,
+        "fields": {
+            "name": "Волошин Владимир Валерьевич",
+            "img_path": "teachers/teacher_63.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 64,
+        "fields": {
+            "name": "Вайтович Инга Михайловна",
+            "img_path": "teachers/teacher_64.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 65,
+        "fields": {
+            "name": "Бровка Дионисий Сергеевич",
+            "img_path": "teachers/teacher_65.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 66,
+        "fields": {
+            "name": "Богдановская Ольга Николаевна",
+            "img_path": "teachers/teacher_66.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 67,
+        "fields": {
+            "name": "Берговина Анастасия Владимировна",
+            "img_path": "teachers/teacher_67.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 68,
+        "fields": {
+            "name": "Барсукова Наталья Валентиновна",
+            "img_path": "teachers/teacher_68.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 69,
+        "fields": {
+            "name": "Барсукова Екатерина Александровна",
+            "img_path": "teachers/teacher_69.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 70,
+        "fields": {
+            "name": "Анципов Евгений Юрьевич",
+            "img_path": "teachers/teacher_70.jpg"
+        }
+    },
+    {
+        "model": "app.teacher",
+        "pk": 71,
+        "fields": {
+            "name": "Амброжи Наталья Михайловна",
+            "img_path": "teachers/teacher_71.jpg"
+        }
+    }
+]
