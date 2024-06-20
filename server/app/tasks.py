@@ -6,14 +6,26 @@ from requests_html import HTMLSession
 from django.conf import settings
 from bs4 import BeautifulSoup
 import json
+import logging
 
 
-def fetch_html(url):
-    with HTMLSession() as session:
-        response = session.get(url)
-        response.html.render()
-        return response.html.html
-
+def fetch_html(url, timeout=60, retries=3):
+    session = HTMLSession()
+    response = session.get(url)
+    for attempt in range(retries):
+        try:
+            logging.info(f"Attempt {attempt + 1} to render {url}")
+            response.html.render(timeout=timeout)
+            logging.info(f"Successfully rendered {url}")
+            break
+        except pyppeteer.errors.TimeoutError:
+            logging.error(f"Timeout exceeded, attempt {attempt + 1} of {retries}")
+            if attempt < retries - 1:
+                logging.info("Retrying...")
+                time.sleep(5)  # ждать 5 секунд перед повторной попыткой
+            else:
+                raise
+    return response.html.html
 
 def parse_html(html):
     soup = BeautifulSoup(html, 'lxml')

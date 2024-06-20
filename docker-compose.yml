@@ -45,7 +45,7 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
-    command: ["redis-server", "--save", "60", "1", "--dir", "/data"]
+    command: redis-server --requirepass 12340000
 
   nginx:
     image: nginx:1.19.8-alpine

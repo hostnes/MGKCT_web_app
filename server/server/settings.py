@@ -123,6 +123,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+CSRF_TRUSTED_ORIGINS = ['https://hostnes.space']
+
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
@@ -130,9 +132,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CELERY_BROKER_URL = 'redis://redis:6379/0'
-broker_url = 'redis://redis:6379/0'
-CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+CELERY_BROKER_URL = 'redis://:12340000@redis:6379/0'
+broker_url = 'redis://:12340000@redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://:12340000@redis:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
