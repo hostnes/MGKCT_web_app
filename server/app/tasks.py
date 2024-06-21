@@ -10,22 +10,32 @@ import json
 
 
 def fetch_html(url, timeout=60, retries=3):
-    session = HTMLSession()
-    response = session.get(url)
-    for attempt in range(retries):
+    with HTMLSession() as session:
+        response = session.get(url)
         try:
-            print(f"Attempt {attempt + 1} to render {url}")
             response.html.render(timeout=timeout)
             print(f"Successfully rendered {url}")
-            break
         except:
-            print(f"Timeout exceeded, attempt {attempt + 1} of {retries}")
-            if attempt < retries - 1:
-                print("Retrying...")
-                time.sleep(5)
-            else:
-                raise
-    return response.html.html
+            print(f"Timeout exceeded, attempt of {retries}")
+        return response.html.html
+
+# def fetch_html(url, timeout=60, retries=3):
+#     session = HTMLSession()
+#     response = session.get(url)
+#     for attempt in range(retries):
+#         try:
+#             print(f"Attempt {attempt + 1} to render {url}")
+#             response.html.render(timeout=timeout)
+#             print(f"Successfully rendered {url}")
+#             break
+#         except:
+#             print(f"Timeout exceeded, attempt {attempt + 1} of {retries}")
+#             if attempt < retries - 1:
+#                 print("Retrying...")
+#                 time.sleep(5)
+#             else:
+#                 raise
+#     return response.html.html
 
 def parse_html(html):
     soup = BeautifulSoup(html, 'lxml')
