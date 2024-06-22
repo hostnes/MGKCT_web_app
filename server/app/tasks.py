@@ -17,6 +17,7 @@ def fetch_html(url, timeout=60, retries=3):
             print(f"Successfully rendered {url}")
         except:
             print(f"Timeout exceeded, attempt of {retries}")
+            return None
         return response.html.html
 
 # def fetch_html(url, timeout=60, retries=3):
@@ -76,6 +77,8 @@ def calculate_students_cabinets_title(data):
 def pars_students_week():
     url = 'https://mgkct.minskedu.gov.by/персоналии/учащимся/расписание-занятий-на-неделю'
     html = fetch_html(url)
+    if html == None:
+        return None
     content_lxml = parse_html(html)
 
     groups = []
@@ -155,6 +158,8 @@ def pars_students_week():
 def pars_teachers_week():
     url = 'https://mgkct.minskedu.gov.by/персоналии/преподавателям/расписание-занятий-на-неделю'
     html = fetch_html(url)
+    if html == None:
+        return None
     content_lxml = parse_html(html)
 
     teachers = []
