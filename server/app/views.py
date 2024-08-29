@@ -26,20 +26,6 @@ class TeachersLessonsView(APIView):
         return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
-class LessonsByGroupView(APIView):
-    def get(self, request, group):
-        file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-        print(group)
-        group_data = data['lessons'][str(group)]
-        result = {}
-        result['info'] = data['info']
-        result['info']['group'] = group
-        result['lessons'] = group_data
-        return JsonResponse(result, safe=False, json_dumps_params={'ensure_ascii': False})
-
-
 class TeachersList(generics.ListAPIView):
     serializer_class = TeacherSerializer
 
@@ -48,7 +34,7 @@ class TeachersList(generics.ListAPIView):
 
 
 
-class GroupsList(generics.ListAPIView):
+class GroupsList(APIView):
     def get(self, request, *args, **kwargs):
         numbers = ["160*", "162*", "163*", "164*", "165*", "166*",
                    "8", "49", "50", "51", "52", "53", "54", "55",

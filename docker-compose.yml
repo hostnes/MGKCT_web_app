@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/project
     command: >
-        sh -c "python server/manage.py runserver 0.0.0.0:8000"
+      sh -c "cd server && gunicorn server.wsgi:application --bind 0.0.0.0:8000"
 
     environment:
       TZ: Europe/Moscow
