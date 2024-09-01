@@ -20,23 +20,6 @@ def fetch_html(url, timeout=60, retries=3):
             return None
         return response.html.html
 
-# def fetch_html(url, timeout=60, retries=3):
-#     session = HTMLSession()
-#     response = session.get(url)
-#     for attempt in range(retries):
-#         try:
-#             print(f"Attempt {attempt + 1} to render {url}")
-#             response.html.render(timeout=timeout)
-#             print(f"Successfully rendered {url}")
-#             break
-#         except:
-#             print(f"Timeout exceeded, attempt {attempt + 1} of {retries}")
-#             if attempt < retries - 1:
-#                 print("Retrying...")
-#                 time.sleep(5)
-#             else:
-#                 raise
-#     return response.html.html
 
 def parse_html(html):
     soup = BeautifulSoup(html, 'lxml')
@@ -63,6 +46,7 @@ def calculate_students_lesson_title(data):
         total_count += 1
     return lessons
 
+
 def calculate_students_cabinets_title(data):
     cabinets = ""
     count = 0
@@ -86,8 +70,8 @@ def pars_students_week():
     for i in content_lxml.find_all("h2"):
         groups.append(i.text.split("-")[-1].strip())
     clean_data = []
-    for student in content_lxml.find_all("div"):
-        student_week_lxml = content_lxml.find_all("div")[global_students_count].find_all("tr")
+    for student in content_lxml.find_all("table"):
+        student_week_lxml = content_lxml.find_all("table")[global_students_count].find_all("tr")
         lessons = []
         day_count = 1
         count = 2
