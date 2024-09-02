@@ -44,19 +44,30 @@ class GroupsList(APIView):
                    "80", "81", "82", "83", "84"]
         return Response(numbers)
 
-
 class WeekGroupsLessonsView(APIView):
     def get(self, request, group):
-        clean_data = []
-        clean_dict = {}
         file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
         with open(file_path, 'r') as file:
             data = json.load(file)
         print(data)
         for day in data:
             if group in day:
-                return Response(day)
                 #return JsonResponse(day, safe=False, json_dumps_params={'ensure_ascii': False})
+                return Response(day)
+        # Возвращаем сообщение об ошибке, если группа не найдена
+        return JsonResponse({'error': 'Group not found'}, status=404, json_dumps_params={'ensure_ascii': False})
+
+#class WeekGroupsLessonsView(APIView):
+#    def get(self, request, group):
+#        clean_data = []
+#        clean_dict = {}
+#        file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
+#        with open(file_path, 'r') as file:
+#            data = json.load(file)
+#
+#        for day in data:
+#            if group in day:
+#                return JsonResponse(day, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
 class WeekTeachersLessonsView(APIView):

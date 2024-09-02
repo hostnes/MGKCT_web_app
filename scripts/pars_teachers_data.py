@@ -8,7 +8,7 @@ import requests
 def fetch_html(url):
     with HTMLSession() as session:
         response = session.get(url)
-        response.html.render()
+        response.html.render(timeout=60)
         return response.html.html
 
 
