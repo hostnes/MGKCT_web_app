@@ -126,9 +126,9 @@ USE_TZ = True
 CSRF_TRUSTED_ORIGINS = ['https://hostnes.space']
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+MEDIA_URL = '/data/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'data')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
