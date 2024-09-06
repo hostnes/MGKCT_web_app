@@ -54,6 +54,6 @@ services:
     volumes:
       - ./server.conf:/etc/nginx/conf.d/default.conf
       - /etc/letsencrypt:/etc/letsencrypt
-      - /root/MGKCT_web_app/server/data/teachers:/data/teachers
+      - /root/MGKCT_web_app/server/data/teachers:/root/MGKCT_web_app/server/data/teachers
 volumes:
   redis_data:
