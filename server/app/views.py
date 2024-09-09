@@ -35,6 +35,9 @@ class TeachersList(generics.ListAPIView):
 
 class GroupsList(APIView):
     def get(self, request, *args, **kwargs):
+        file_path = os.path.join(settings.BASE_DIR, 'data', 'groups.json')
+        with open(file_path, 'r') as file:
+            data = json.load(file)
         numbers = ["160*", "162*", "163*", "164*", "165*", "166*",
                    "8", "49", "50", "51", "52", "53", "54", "55",
                    "56", "57", "58", "59*", "60", "61", "62", "63",
@@ -51,7 +54,6 @@ class WeekGroupsLessonsView(APIView):
         file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
         with open(file_path, 'r') as file:
             data = json.load(file)
-        print(data)
         for day in data:
             if group in day:
                 return Response(day)

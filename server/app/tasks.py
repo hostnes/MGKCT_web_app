@@ -133,7 +133,8 @@ def pars_students_week():
         clean_data.append(clean_student_data)
         global_students_count += 1
 
-    file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
+    # file_path = os.path.join(settings.BASE_DIR, 'data', 'students_week_lessons.json')
+    file_path = os.path.join('server', 'data', 'students_week_lessons.json')
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(clean_data, file, indent=4, ensure_ascii=False)
 
@@ -199,6 +200,7 @@ def pars_teachers_week():
         clean_teacher_data[teachers[global_teacher_count]] = week_data
         clean_data.append(clean_teacher_data)
         global_teacher_count += 1
-    file_path = os.path.join(settings.BASE_DIR, 'data', 'teachers_week_lessons.json')
+    # file_path = os.path.join(settings.BASE_DIR, 'data', 'teachers_week_lessons.json')
+    file_path = os.path.join("server", 'data', 'teachers_week_lessons.json')
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(clean_data, file, indent=4, ensure_ascii=False)

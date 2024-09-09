@@ -3,7 +3,7 @@ import os
 from bs4 import BeautifulSoup
 from requests_html import HTMLSession
 import requests
-
+from conf import DATA_DIR
 
 def fetch_html(url):
     with HTMLSession() as session:
@@ -42,7 +42,7 @@ def pars_teachers():
         img_url = "https://mgkct.minskedu.gov.by" + teacher.find("div", class_="preview").find("img")['src']
         img_name = f"teacher_{global_count}.jpg"
 
-        # download_image(img_url, f"teachers/{img_name}")
+        download_image(img_url, os.path.join(DATA_DIR, f"teachers/{img_name}"))
 
         name = teacher.find("h3").text
         clean_data.append(
@@ -57,7 +57,7 @@ def pars_teachers():
         )
         global_count += 1
 
-    file_path = 'data.json'
+    file_path = os.path.join(DATA_DIR, "teachers_db_data.json")
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(clean_data, file, indent=4, ensure_ascii=False)
 

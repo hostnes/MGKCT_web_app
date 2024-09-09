@@ -55,3 +55,11 @@ celerybeat.pid
 
 docker-compose.override.yml
 .env.docker
+
+dump.rdb
+server/data/teachers
+server/data/students_week_lessons.json
+server/data/teachers_db_data.json
+server/data/teachers_week_lessons.json
+server/data/groups.json
+server/data/lessons_time.json
