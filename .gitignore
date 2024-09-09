@@ -56,6 +56,7 @@ celerybeat.pid
 docker-compose.override.yml
 .env.docker
 
+venv1
 dump.rdb
 server/data/teachers
 server/data/students_week_lessons.json
