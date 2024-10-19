@@ -1,2 +1,2 @@
 DATA_DIR = '../server/data'
-VENV_PATH = "../venv1"
+VENV_PATH = "../venv"

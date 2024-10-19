@@ -58,7 +58,7 @@ docker-compose.override.yml
 
 venv1
 dump.rdb
-server/data/teachers
+#server/data/teachers
 server/data/students_week_lessons.json
 server/data/teachers_db_data.json
 server/data/teachers_week_lessons.json
